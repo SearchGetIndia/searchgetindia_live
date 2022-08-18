@@ -1,7 +1,6 @@
-import React from 'react';
-// import $ from "jquery"
+import React from 'react'
 import { useEffect } from "react";
-import $ from "jquery"
+
 const FooterBar = () => {
 
 

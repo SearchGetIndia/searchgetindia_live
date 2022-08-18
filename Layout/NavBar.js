@@ -1,7 +1,7 @@
 
 import Link from 'next/link'
+import Image from 'next/image'
 import React, {useState} from 'react';
-import $ from "jquery"
 const NavBar = () => {
 
   const [user, Loading] = useState('shirsat');
@@ -17,7 +17,7 @@ const NavBar = () => {
               <div className="navbar-header">
                 <div className="navbar-brand">
                   <Link href="/">
-                  <a><img alt="logo" src="assets/images/logo2.png" /></a></Link>
+                  <a><Image width={500} height={500} alt="logo" src="assets/images/logo2.png" /></a></Link>
                 </div>
               </div>
             </div>
