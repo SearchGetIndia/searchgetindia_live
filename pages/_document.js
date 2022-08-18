@@ -12,7 +12,7 @@ export default function Document({title,keywords, Description, children}) {
     <meta name="description" content={Description}/>
     <meta name="keywords" content={keywords}/>
 
-    <title>{title}</title>
+  
 
     
     <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon" defer/>
