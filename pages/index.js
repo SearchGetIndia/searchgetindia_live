@@ -62,7 +62,7 @@ function Home (props)
                   <div className="row">
                     <div className="col-sm-5">
                       {/* movies.movie_poster.url */}
-                       <iImage width={500} height={500} className="card-img-top h-100" alt="..."  src={`${BASE_URL}`+ item.attributes.image.data.attributes.url} />
+                       <Image width={500} height={500} className="card-img-top h-100" alt="..."  src={`${BASE_URL}`+ item.attributes.image.data.attributes.url} />
 
                       {/* <Image src={item.attributes.image.data.attributes.name} width={500} height={500}  className="card-img-top h-100"/> */}
                     
