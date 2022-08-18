@@ -5,7 +5,7 @@ import styles from '../styles/Home.module.css'
 export default function Home() {
   return (
   <>
-  <h3>Testing Project</h3>
+  <h3>Testing Project Updated</h3>
   </>
   )
 }
