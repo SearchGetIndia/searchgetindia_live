@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps })
   <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
   <link rel="stylesheet" type="text/css" href="assets/font-awesome/css/font-awesome.min.css" />
 
-  <script type="text/javascript" src="assets/js/jquery.min.js" defer ></script>
+    <script type="text/javascript" src="assets/js/jquery.min.js" defer ></script>
     <script type="text/javascript" src="assets/js/bootstrap.min.js" defer ></script>
     <script type="text/javascript" src="assets/js/custom.js" defer></script>
 
