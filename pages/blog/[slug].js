@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 
 const Slug = ({blog}) => {
     const router = useRouter()
-    router.reload(window.location.pathname)
+    
     const { Slug } = router.query
     return (
         <>
