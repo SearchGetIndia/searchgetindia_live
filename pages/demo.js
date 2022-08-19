@@ -2,8 +2,7 @@
 
 import Head from 'next/head'
 import Image from 'next/image'
-import FooterBar from '../Layout/FooterBar';
-import NavBar from '../Layout/NavBar';
+
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { BASE_URL } from '../config/configurl';
@@ -113,7 +112,7 @@ const Demo = () => {
 
     return (
         <>
-            <NavBar />
+            
 
             <div className="container">
                 <div className="row">
@@ -273,7 +272,7 @@ const Demo = () => {
 
 
             {/* footer include here */}
-            <FooterBar />
+           
 
 
         </>

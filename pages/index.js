@@ -1,8 +1,7 @@
 // export const API_URL = process.env.NEXTJS_PUBLIC_URL || "http://localhost:1337";
 import Head from 'next/head'
 import Image from 'next/image'
-import FooterBar from '../Layout/FooterBar';
-import NavBar from '../Layout/NavBar';
+
 import React, { useState, useEffect  } from 'react';
 import Router, { useRouter } from 'next/router';
 import { BASE_URL } from '../config/configurl';
@@ -42,7 +41,7 @@ function Home (props)
     <>
 
       {/* navbar include here */}
-      <NavBar />
+    
 
 
       <div className="container">
@@ -103,7 +102,7 @@ function Home (props)
       </div>
 
       {/* footer include here */}
-      <FooterBar />
+    
     </>
   )
 }
