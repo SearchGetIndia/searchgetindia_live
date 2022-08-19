@@ -15,7 +15,7 @@ export default function Document({title,keywords, Description, children}) {
   
 
     
-    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon" defer/>
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon" />
   
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
     
