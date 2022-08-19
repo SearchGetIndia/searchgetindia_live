@@ -14,14 +14,14 @@ export default function Document({title,keywords, Description, children}) {
 
   
 
-    
+{/*     
     <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon" />
   
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
     
   
     <link rel="stylesheet" type="text/css" href="assets/font-awesome/css/font-awesome.min.css" />
-  
+   */}
  
 
       </Head>
@@ -30,11 +30,12 @@ export default function Document({title,keywords, Description, children}) {
         <Main />
         <NextScript />
         <a href="#" className="scroll-to-top"><i className="fa fa-angle-up"></i></a>
-    <script type="text/javascript" src="assets/js/jquery.min.js" defer ></script>
+    {/* <script type="text/javascript" src="assets/js/jquery.min.js" defer ></script>
     <script type="text/javascript" src="assets/js/bootstrap.min.js" defer ></script>
+    <script type="text/javascript" src="assets/js/custom.js" defer></script> */}
     
     {/* <!-- custom JS --> */}
-    <script type="text/javascript" src="assets/js/custom.js" defer></script>
+    
    
 
       </body>
