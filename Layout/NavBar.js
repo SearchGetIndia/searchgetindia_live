@@ -2,6 +2,13 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import React, {useState} from 'react';
+import dynamic from 'next/dynamic'
+
+
+export const ComponentWithNoSSR = dynamic(() => import('./Component'), {
+  ssr: false,
+})
+
 const NavBar = () => {
 
   const [user, Loading] = useState('shirsat');
