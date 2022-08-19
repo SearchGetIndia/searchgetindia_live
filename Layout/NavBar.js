@@ -1,6 +1,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
+import Head from "next/head";
 import React, {useState} from 'react';
 import dynamic from 'next/dynamic'
 
@@ -14,6 +15,18 @@ const NavBar = () => {
 
   return (
   <>
+  <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="assets/font-awesome/css/font-awesome.min.css" />
+
+    <script type="text/javascript" src="assets/js/jquery.min.js" defer ></script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js" defer ></script>
+    <script type="text/javascript" src="assets/js/custom.js" defer></script>
+
+      </Head>
 
 <div className="navigationBar">
         <div className="container topHeadcontainer">
