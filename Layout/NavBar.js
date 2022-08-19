@@ -51,7 +51,7 @@ const NavBar = () => {
                 <li><Link href="/"><a>Home</a></Link></li>
                 <li><Link href="/about"><a>About</a></Link></li>
                 <li><Link href="/how-to-work"><a>How To Work</a></Link></li>
-                <li><Link href="/blog"><a>Blog</a></Link></li>
+                <li><Link href="/blogs"><a>Blogs</a></Link></li>
                 <li><Link href="/contact"><a>Contact</a></Link></li>
                 <li><Link href="/enquiry"><a>New Enquiry</a></Link></li>
                 <li><Link href="/privacy-policy"><a>Privacy & Policy</a></Link></li>
