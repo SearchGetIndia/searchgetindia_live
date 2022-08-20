@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import { BASE_URL } from '../config/configurl';
 
 const index = (props) => {
     return (
