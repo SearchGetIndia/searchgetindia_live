@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Head from "next/head";
 import React, {useState} from 'react';
-import dynamic from 'next/dynamic'
+
 
 
 
@@ -15,22 +15,7 @@ const NavBar = () => {
 
   return (
   <>
-  <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js" integrity="sha512-nhY06wKras39lb9lRO76J4397CH1XpRSLfLJSftTeo3+q2vP7PaebILH9TqH+GRpnOhfAGjuYMVmVTOZJ+682w==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
-
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js" defer></script>
-
-    {/* <script type="text/javascript" src="assets/js/custom.js" defer></script> */}
-    <script type="text/javascript" src="https://searchgetindia.vercel.app/assets/js/custom.js" defer></script>
-
-      </Head>
+ 
 
 <div className="navigationBar">
         <div className="container topHeadcontainer">
@@ -39,7 +24,11 @@ const NavBar = () => {
               <div className="navbar-header">
                 <div className="navbar-brand">
                   <Link href="/">
-                  <a><Image width={150} height={100} alt="logo" src="assets/images/logo2.png" /></a></Link>
+                  <a>
+                    {/* <Image width={150} height={100} alt="logo" src="assets/images/logo2.png" /> */}
+                    <img alt="logo" src="logo2.png" />
+                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

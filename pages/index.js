@@ -1,61 +1,23 @@
-// export const API_URL = process.env.NEXTJS_PUBLIC_URL || "http://localhost:1337";
-import Head from 'next/head'
-import Image from 'next/image'
+import React from 'react'
+import Link from 'next/link'
 
-import React, { useState, useEffect  } from 'react';
-import Router, { useRouter } from 'next/router';
-import { BASE_URL } from '../config/configurl';
-
+const index = (props) => {
+    return (
+        <>
 
 
-export async function getServerSideProps() 
-{
-  const res = await fetch(`${BASE_URL}/api/servicelists?populate=*`);
-  // const res = await fetch('https://searchgetadmin.herokuapp.com/api/servicelists?populate=*');
-  // const res = await fetch('http://localhost:1337/api/servicelists');
-
-  const service_list = await res.json()
-  return { 
-    props: { service:service_list },
-  }
-}
-
-
-
-function Home (props) 
-{
-  
-
-
-  const router = useRouter();
-  let sendPropts = (servive_name)=>
-
-  {
-   
-    const service = servive_name;
-    Router.push({ pathname: "/demo", query:{ service }})
-   }
-
-
-  return (
-    <>
-
-      {/* navbar include here */}
-    
-
-
-      <div className="container">
+<div className="container">
         <div className="row">
           <div className="col-lg-12">
                    
 
               {
-                   props.service.data.map((item , index)=>
+                    props.search_value.data.map((item) =>
                    {
                    return(
         <div key={index}>
 
-            <div className="col-md-6 brd">
+          <div className="col-md-6 brd">
               <div className="m-4">
                 <div className="card11">
                   <div className="row">
@@ -63,20 +25,18 @@ function Home (props)
                       {/* movies.movie_poster.url */}
                        {/* <Image width={500} height={500} className="card-img-top h-100" alt="..."  src={`${BASE_URL}`+ item.attributes.image.data.attributes.url} /> */}
 
-                       <img className="card-img-top h-100" alt="..."  src={`${BASE_URL}`+ item.attributes.image.data.attributes.url} />
+                       {/* <img className="card-img-top h-100" alt="..."  src={`${BASE_URL}`+ item.attributes.image.data.attributes.url} /> */}
                     
                    
                     </div>
                     <div className="col-sm-7">
-                      <div className="BusinessNamelist">{item.attributes.Service_Name}</div>
+                      <div className="BusinessNamelist">{item.attributes.title}</div>
                       <div className="card-body">
-                        <p>{item.attributes.Service_Desc}</p>
+                        <p>{item.attributes.description}</p>
                         {/* <p>{console.log(item.attributes.image.data.attributes.name)}</p> */}
                          {/* <a onClick={()=> sendPropts()} className="btn btn-primary">Find Location <i className="fa fa-map-marker"></i></a> */}
+                         <Link href={`/searches/${item.attributes.slug}`}><a className="btn btn-primary">Find Location <i className="fa fa-map-marker"></i></a></Link>
 
-                         <a onClick={(e)=>{sendPropts(item.attributes.Service_Name)}}
- 
-                          className="btn btn-primary">Find Location <i className="fa fa-map-marker"></i></a>
                       </div>
                     </div>
                   </div>
@@ -90,20 +50,24 @@ function Home (props)
           }
         )
         }
-
-
-
-          
-
-              
-
           </div>
         </div>
       </div>
 
-      {/* footer include here */}
-    
-    </>
-  )
+
+
+
+        </>
+    )
 }
-export default Home;
+
+export async function getServerSideProps(context) {
+    // let headers = { Authorization: "Bearer 710bc44ddbd99fd572bd22facd8f647a83547b673350d1fc8f449b7840d133d221399adaf9ea97212fe8bd4c80849d44dee5f56334c16b276cac2362169d39f44f63d18f52e6b32f8b15665d6a75db4a2ab122aac57a294ab85837b1a2e705e8c2411af1678e13682e89df15f001b6ceb46691c110e14a990e4b7596b7913766" }
+    let a = await fetch("https://searchgetadmin.herokuapp.com/api/searches?populate=*",)
+    let search_data = await a.json()
+    return {
+        props: { search_value: search_data }, // will be passed to the page component as props
+    }
+}
+
+export default index
