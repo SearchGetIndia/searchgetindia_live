@@ -64,7 +64,7 @@ function Home (props)
                        <Image width={500} height={500} className="card-img-top h-100" alt="..."  src={`${BASE_URL}`+ item.attributes.image.data.attributes.url} />
 
                       {/* <Image src={item.attributes.image.data.attributes.name} width={500} height={500}  className="card-img-top h-100"/> */}
-                    <h3>{`${BASE_URL}`+ item.attributes.formats.thumbnail.url} </h3>
+                    <h3>{console.log("path", item.attributes.formats.thumbnail.url} </h3>
                    
                     </div>
                     <div className="col-sm-7">
