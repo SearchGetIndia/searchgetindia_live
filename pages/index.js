@@ -26,7 +26,7 @@ const index = (props) => {
                       {/* movies.movie_poster.url */}
                        {/* <Image width={500} height={500} className="card-img-top h-100" alt="..."  src={`${BASE_URL}`+ item.attributes.image.data.attributes.url} /> */}
 
-                       {/* <img className="card-img-top h-100" alt="..."  src={`${BASE_URL}`+ item.attributes.image.data.attributes.url} /> */}
+                       <img className="card-img-top h-100" alt="..."  src={`${BASE_URL}`+ item.attributes.image.data.attributes.url} />
                     
                    
                     </div>
@@ -34,8 +34,7 @@ const index = (props) => {
                       <div className="BusinessNamelist">{item.attributes.title}</div>
                       <div className="card-body">
                         <p>{item.attributes.description}</p>
-                        {/* <p>{console.log(item.attributes.image.data.attributes.name)}</p> */}
-                         {/* <a onClick={()=> sendPropts()} className="btn btn-primary">Find Location <i className="fa fa-map-marker"></i></a> */}
+                        
                          <Link href={`/searches/${item.attributes.slug}`}><a className="btn btn-primary">Find Location <i className="fa fa-map-marker"></i></a></Link>
 
                       </div>

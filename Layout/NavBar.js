@@ -82,18 +82,13 @@ const NavBar = () => {
                 <li><Link href="/privacy-policy"><a>Privacy & Policy</a></Link></li>
                 <li><Link href="/demo"><a>Demo</a></Link></li>
 
-                {
-                  !Loading && (user ? (
-                    <>
+               
                     {/* dashboard page */}
                     <li><Link href="/dashboard"><a>dashboard</a></Link></li>
                      {/* Logout */}
                     <li><Link href="/logout"><a>Logout</a></Link></li>
-                     <li>{`${user}!`}</li>
-                    </>
-                  ):(
-                    ''
-                    ))}
+                    
+                 
                 
                      
 
