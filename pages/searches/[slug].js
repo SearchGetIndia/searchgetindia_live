@@ -227,7 +227,7 @@ const Slug = ({search_data}) =>
                                                 </div>
                                                 <div className="row">
                                                     <div className="col-sm-3">
-                                                        <img src={`${BASE_URL}` + val.attributes?.Profile_imgs.data?.attributes?.url} className="card-img-top h-100" alt="..." />
+                                                        {/* <img src={`${BASE_URL}` + val.attributes?.Profile_imgs.data?.attributes?.url} className="card-img-top h-100" alt="..." /> */}
                                                     </div>
                                                     <div className="col-sm-9">
                                                         <div className="BusinessName">{val.attributes?.Service_Name}</div>
