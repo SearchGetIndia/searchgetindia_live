@@ -65,7 +65,7 @@ function Home (props)
 
                       {/* <Image src={item.attributes.image.data.attributes.name} width={500} height={500}  className="card-img-top h-100"/> */}
                     
-                    
+                    <h3>{`${BASE_URL}`+ item.attributes.image.data.attributes.url} </h3>
                     </div>
                     <div className="col-sm-7">
                       <div className="BusinessNamelist">{item.attributes.Service_Name}</div>
