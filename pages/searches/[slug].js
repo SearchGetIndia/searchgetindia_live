@@ -1,5 +1,6 @@
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useRouter } from 'next/router'
 import React, { useState, useEffect } from 'react';
 
@@ -7,7 +8,8 @@ import { BASE_URL } from '../../config/configurl';
 import result from '../../List_Data/result.json'
 
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps(context)
+ {
     // let headers = { Authorization: "Bearer 710bc44ddbd99fd572bd22facd8f647a83547b673350d1fc8f449b7840d133d221399adaf9ea97212fe8bd4c80849d44dee5f56334c16b276cac2362169d39f44f63d18f52e6b32f8b15665d6a75db4a2ab122aac57a294ab85837b1a2e705e8c2411af1678e13682e89df15f001b6ceb46691c110e14a990e4b7596b7913766" }
     let a = await fetch(`${BASE_URL}/api/searches?filters[slug]=` + context.query.slug + "&populate=*",)
     let search_result = await a.json()

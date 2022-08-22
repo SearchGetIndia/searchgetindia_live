@@ -1408,5 +1408,73 @@ h6.card-title {
     background-color: #f38d43 !important;
 }
 
-/* login page css */
 
+
+/* blog Page Design */
+
+/* cardsd */
+.cardsd{
+    position:relative;
+    margin: 5px;
+    height:400px;
+    background: #fff;
+    transform-style:preserve-3d;
+    transform:perspective(2000px);
+    transition:1s;
+    box-shadow:inset 100px 0 50px rgba(0,0,0,0.5);
+  }
+  
+  .cardsd:hover{
+    z-index:1111;
+    transform:perspective(2000px) rotate(-10deg);
+    box-shadow:inset 20px 0 50px rgba(0,0,0,0.5);
+  }
+  
+  .cardsd .img-container{
+    position:relative;
+    width:100%;
+    height:100%;
+    border:1px solid #000;
+    box-sizing:border-box;
+    transform-origin:left;
+    z-index:1;
+    transition:1s;
+  }
+  
+  .cardsd .img-container img{
+    position:absolute;
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    object-fit:cover;
+  }
+  
+  .cardsd:hover .img-container{
+    transform:rotateY(-135deg);
+  }
+  
+  .cardsd .card-details{
+    position: absolute;
+    left: 70px;
+    top: 205px;
+    box-sizing: border-box;
+    /* padding: 27px; */
+    color: #000;
+  }
+  
+   .cardsd .card-details h2{
+
+    text-transform:uppercase;
+    font-size:25px;
+    color:#000;
+    position: relative;
+    z-index: 999;
+  }
+  
+  .cardsd .card-details p{
+    margin:0;
+    padding:0;
+    line-height:25px;
+    font-size:1.1em;
+  }
