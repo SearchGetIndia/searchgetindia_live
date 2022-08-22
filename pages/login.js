@@ -1,10 +1,12 @@
+export const API_URL = process.env.NEXTJS_PUBLIC_URL || "http://localhost:1337";
 import React, {useState} from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
+import FooterBar from '../Layout/FooterBar';
+import NavBar from '../Layout/NavBar';
 import { useRouter } from 'next/router';
 import axios from 'axios';
 import swal from 'sweetalert';
-import { BASE_URL } from '../config/configurl';
 
 
 const Login = () => {
@@ -25,9 +27,13 @@ const Login = () => {
     //2. function defination
 let loginData = () =>
 {
-   
+    // console.log('clicked');
+    // console.log(identifier);
+    // console.log(password);
+
+
     // Request API.
-axios.post(`${BASE_URL}/api/auth/local`, {
+axios.post(`${API_URL}/api/auth/local`, {
   identifier: identifier,
   password: password,
 })
