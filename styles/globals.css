@@ -1478,3 +1478,12 @@ h6.card-title {
     line-height:25px;
     font-size:1.1em;
   }
+
+  .Pagination {
+    text-align: center;
+}
+
+.col-md-12.brdinner {
+    padding-right: 100px;
+    padding-left: 100px;
+  }

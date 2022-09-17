@@ -78,9 +78,9 @@ const NavBar = () => {
                 <li><Link href="/how-to-work"><a>How To Work</a></Link></li>
                 <li><Link href="/blog"><a>Blog</a></Link></li>
                 <li><Link href="/contact"><a>Contact</a></Link></li>
-                <li><Link href="/privacy-policy"><a>Privacy & Policy</a></Link></li>
+                <li><Link href="/upload"><a>upload File</a></Link></li>
                     {/* dashboard page */}
-                    <li><Link href="/dashboard"><a>dashboard</a></Link></li>
+                    <li><Link href="/profile"><a>Profile</a></Link></li>
                      {/* Logout */}
                     <li><Link href="/logout"><a>Logout</a></Link></li>
                 

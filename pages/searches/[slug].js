@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect,useLayoutEffect } from 'react';
 
 import { BASE_URL } from '../../config/configurl';
 import result from '../../List_Data/result.json'
@@ -44,23 +44,24 @@ const Slug = ({search_data}) =>
 
 
    //   api fetching code
-   useEffect(() => {
+   useLayoutEffect(() => {loadData(); }, []);
 
-       try {
-           fetch(`${BASE_URL}/api/client-all-lists?populate=*`,)
-               .then((reponse) => reponse.json())
-               .then((resp) => {
-                //    console.log('store_list->', resp)
-                 SetResult(resp.data);
+   let loadData=()=>{
+    try {
+       
+        fetch(`${BASE_URL}/api/client-all-lists?populate=*`,)
+            .then((reponse) => reponse.json())
+            .then((resp) => {
+             //    console.log('store_list->', resp)
+              SetResult(resp.data);
 
-               })
-               .finally(() => { });
-       } catch (error) {
-
-       }
-
-   }, []);
-
+            })
+            .finally(() => { });
+    } catch (error) 
+    {
+           console.log(error)
+    }
+   }
 
    const StateValue = [...new Set(getData.results.map(item => item.SNE))];
    StateValue.sort();
@@ -195,20 +196,32 @@ const Slug = ({search_data}) =>
                     {/* {console.log("use_list", useResult)} */}
 
                     {
-
+                     
                         useResult.filter((ByResult) => 
                         {
 
-                            if (ByResult) {
+                            if (true)
+                             {
+                                
                                 return (
-                                    (ByResult.attributes?.location.data?.attributes.Service_Name == search_data.attributes.title)
+                                       (ByResult.attributes?.Service_Name == search_data.attributes.title)
                                     && (ByResult.attributes?.location.data?.attributes.STATE_NAME == StateTerm)
                                     && (ByResult.attributes?.location.data?.attributes.DISTRICT_NAME == DistrictTerm)
-                                    || (ByResult.attributes?.location.data?.attributes.SUB_DISTRICT_NAME == SubDistrictTerm)
+                                    && (ByResult.attributes?.location.data?.attributes.SUB_DISTRICT_NAME == SubDistrictTerm)
                                     || (ByResult.attributes?.location.data?.attributes.Area_Name == AreaTerm)
                                 );
+                               
 
                             }
+                            // else{
+                            //     return (
+                            //         (ByResult.attributes?.Service_Name == search_data.attributes.title)
+                            //      && (ByResult.attributes?.location.data?.attributes.STATE_NAME == StateTerm)
+                            //      && (ByResult.attributes?.location.data?.attributes.DISTRICT_NAME == DistrictTerm)
+                            //      && (ByResult.attributes?.location.data?.attributes.SUB_DISTRICT_NAME == SubDistrictTerm)
+                            //      && (ByResult.attributes?.location.data?.attributes.Area_Name == AreaTerm)
+                            //  );
+                            // }
 
                         }).map((val, index) => {
 
@@ -227,7 +240,7 @@ const Slug = ({search_data}) =>
                                                     </h4>
                                                     
                                                 </div>
-                                                <div className="row">
+                                                <div className="row" onLoad= {() =>loadData1()}>
                                                     <div className="col-sm-3">
                                                         <img src={`${BASE_URL}` + val.attributes?.Profile_imgs.data?.attributes?.url} className="card-img-top h-100" alt="..." />
                                                     </div>
