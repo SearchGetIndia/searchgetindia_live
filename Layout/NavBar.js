@@ -80,7 +80,7 @@ const NavBar = () => {
                 <li><Link href="/contact"><a>Contact</a></Link></li>
                 <li><Link href="/upload"><a>upload File</a></Link></li>
                     {/* dashboard page */}
-                    <li><Link href="/profile"><a>Profile</a></Link></li>
+                    <li><Link href="/profilebackup"><a>Profile</a></Link></li>
                      {/* Logout */}
                     <li><Link href="/logout"><a>Logout</a></Link></li>
                 

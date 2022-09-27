@@ -14,10 +14,11 @@ const Login = () => {
     const [password ,setPassword] = useState('');
 
     // login variable
-    const [user , setUser] =useState({
-        user:null,
-        is_loggedin:false
+    const [userdata , getData] = useState();
 
+    const [getuser , setUser] =useState({
+        getuser:null,
+        is_loggedin:false
     });
 
     const { push } = useRouter();
@@ -36,21 +37,26 @@ axios.post(`${BASE_URL}/api/auth/local`, {
 .then((response) => {
   // Handle success.
   console.log('Well done!');
+
+  getData(response.data);
+  setUser({
+ //get the previous data and place here
+    ...getuser,
+    is_loggedin:true
+  });
+
+
  
 localStorage.setItem('token',response.data.jwt);
 localStorage.setItem('UserInfo',JSON.stringify(response.data.user));
 
-//   swal("Well done!", JSON.stringify(response.data.user), "success");
-  swal("Well done!", "Login Succefully", "success");
+console.log('UserInfo11',JSON.stringify(response.data.user));
 
-  setUser({
-    ...user,
-    is_loggedin:true
-});
-  console.log('User profile', response.data.user);
-  console.log('User token', response.data.jwt);
-//   setTimeout(()=>push('/dashboard'),3000) ;
-//   setTimeout(() => history.push('/'), 3000);
+console.log("UserInfo22",response.data.user);
+
+//   swal("Well done!", JSON.stringify(response.data.user), "success");
+  swal("Well done!", response.data.user.username, "success");
+
 })
 .catch((error) => {
   // Handle error.
@@ -83,7 +89,14 @@ localStorage.setItem('UserInfo',JSON.stringify(response.data.user));
                                     <div className="lead fw-normal mb-0 me-3">
                                         <p className="lead fw-normal mb-0 me-3">Sign in with</p>
                                     </div>
+                                    { 
+                                    getuser.is_loggedin && 
+                                    <h3>User Name:{userdata.user.username}</h3>
+                                    //   <h1>User Name:{console.log("My data",userdata.user.username)}</h1>
+                                    }
 
+
+                                  
                                     <div className="form-outline mb-4">
                                         <input type="email" 
                                                name="identifier"
@@ -125,14 +138,9 @@ localStorage.setItem('UserInfo',JSON.stringify(response.data.user));
             </div>
 
 
-             <>
-             {user.is_loggedin &&
-             <h3 className> hiiiii {user}</h3>
-             }
-             </>
+             
 
-
-
+      
 
             {/* footer include here */}
         
