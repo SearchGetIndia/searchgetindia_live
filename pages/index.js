@@ -26,9 +26,9 @@ const index = (props) => {
                       {/* movies.movie_poster.url */}
                        {/* <Image width={500} height={500} className="card-img-top h-100" alt="..."  src={`${BASE_URL}`+ item.attributes.image.data.attributes.url} /> */}
 
-                       <img className="card-img-top h-100" alt="..."  src={`${BASE_URL}`+ item.attributes.image.data.attributes.url} />
+                       {/* <img className="card-img-top h-100" alt="..."  src={`${BASE_URL}`+ item.attributes.image.data.attributes.url} /> */}
                     
-                   
+                       <img className="card-img-top h-100" alt="..."  src="https://soilglobe.com/working/wp-content/uploads/2022/05/WhatsApp-Image-2022-01-17-at-6.46.51-PM.jpeg" />
                     </div>
                     <div className="col-sm-7">
                       <div className="BusinessNamelist">{item.attributes.title}</div>
